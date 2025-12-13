@@ -10,7 +10,9 @@ add_executable(agol_app vezba1/Agol.cpp
         vezba2/Country.cpp
         vezba2/examples.cpp
         vezba2/classexamples.cpp
-        vezba2/construcotdestructorexample.cpp)
+        vezba2/construcotdestructorexample.cpp
+        vezba3/Car.cpp
+        vezba3/MobilePhoneOwner.cpp)
 add_executable(krug_app vezba1/Krug.cpp)
 add_executable(film_app vezba2/Film.cpp)
 add_executable(struct_app
