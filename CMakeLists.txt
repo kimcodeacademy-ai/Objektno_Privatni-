@@ -18,6 +18,11 @@ add_executable(agol_app vezba1/Agol.cpp
         vezba4/staticexample.cpp
         vezba4/VideoGame.cpp
         vezba4/Mountain.cpp
+        vezba5/vekdotr2d.cpp
+        vezba5/brojac.cpp
+        vezba5/niza.cpp
+        vezba5/matrica-lab.cpp
+        vezba5/ingredient.cpp
 )
 add_executable(krug_app vezba1/Krug.cpp)
 add_executable(film_app vezba2/Film.cpp)
