@@ -20,52 +20,50 @@
 using namespace std;
 
 class Krug {
+
+private:
     float radius;
-    const float pi=3.14;
+    float pi = 3.14;
 
 public:
-    Krug() {
 
-    }
+    // konstruktori: specijalni metodi za dodeluvanje vrednost na atributite
+    // notacija za konstruktir: imeto na samata klasa (//argumentite)
+
+    // default constructor
+    Krug() {}
+
+    // constructor with arguments
     Krug(float _radius) {
         radius = _radius;
     }
 
-    // plostina na krug = pi*radius^2
+    // pi*radius^2
     float plostina() {
         return pi*radius*radius;
     }
-    // perimetar na krug = 2*radius*pi
+
+    // 2*radius*pi;
     float perimetar() {
         return 2*radius*pi;
     }
 
-    bool ednakvi() {
-        // float plostina = pi*radius*radius;
-        // float perimetar = 2*radius*pi;
-        // if (perimetar == plostina)
-        //     return true;
-        // return false;
-        if (plostina() == perimetar()) {
-            return true;
-        }
-        return false;
+    bool isEqual() {
+        return plostina() == perimetar();
     }
-
-    void setRadius(float _radius) {
-        radius = _radius;
-    }
-
 };
 
 int main() {
+
     float r;
     cin >> r;
-    Krug k;
-    k.setRadius(r);
-    cout << "Perimetarot na krugot e: "<<k.perimetar()<<endl;
-    cout << "Plostinata na krugot e: "<<k.plostina()<<endl;
-    cout << "Dali perimetarot i plostinata na krugot se ednakvi?  "<<k.ednakvi()<<endl;
+
+    Krug krug(r);
+
+    cout << "Perimetarot na krugot e: " << krug.perimetar()<<endl;
+    cout << "Plostinata na krugot e: " << krug.plostina()<<endl;
+    cout << "Dali perimetarot na krugot e ednakov so plostinata na krugot: " << krug.isEqual()<<endl;
 
     return 0;
 }
+

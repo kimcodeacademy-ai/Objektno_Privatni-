@@ -19,52 +19,56 @@
 // 3. ChokoBanana	5.00 x 10.0 = 50.00
 // Total: 230.00
 
+#include <iomanip>
 #include <iostream>
 #include <string>
-#include <iomanip>
 
 using namespace std;
 
-struct Proiz {
+struct Proizvod {
     string name;
     int cena;
     float kolicina;
-
-    // kaj struktura nemame metodi - klasa
+    // strukturte nemat metodi vnatre vo niv
 };
 
-// int main(){
-//
-//     int n;
-//     cin>>n;
-//
-//     // int niza[n];
-//     // char niza[n];
-//     Proiz arr[n];
-//     float total = 0;
-//
-//     for (int i = 0; i < n; i++) {
-//         cin>> arr[i].name >> arr[i].cena >> arr[i].kolicina;
-//
-//         float rez = arr[i].cena * arr[i].kolicina;
-//         total += rez;
-//     }
-//
-//     cout<<"Imame vkupno: "<<n<<" proizvodi"<<endl;
-//     // 1. Flips	10.00 x 3.0 = 30.00
-//     for (int i = 0; i < n; i++) {
-//         float rez = arr[i].cena * arr[i].kolicina;
-//
-//         //cout<<arr[i].name<<" "<<arr[i].cena<<" "<< arr[i].kolicina<<endl;
-//         cout << i+1 << ". "
-//         << arr[i].name << "\t"
-//         << fixed << setprecision(2) << arr[i].cena
-//         << " x "
-//         << setprecision(1) << arr[i].kolicina
-//         << " = "
-//         << setprecision(2) << rez << "\n";
-//     }
-//
-//     cout<<total<<"\n";
-//     return 0;
-// }
+int main() {
+
+    int n;
+    cin>>n;
+
+    float total = 0.0;
+
+    // for (int i = 0; i < n; i++) {
+    //     string name;
+    //     int vrednost;
+    //     int kolicina;
+    //     cin>>name>>vrednost>>kolicina;
+    //     total = total + (vrednost*kolicina*1.0);
+    //     cout<< i+1 << "." << name << " " << vrednost << " " << kolicina << endl;
+    // }
+
+    // podatocen tip _ ime na nizata _ br. el
+    Proizvod proizvodi[n];
+
+    for (int i = 0; i < n; i++) {
+        // input
+       cin >> proizvodi[i].name >> proizvodi[i].cena >> proizvodi[i].kolicina;
+        total = total + (proizvodi[i].kolicina * proizvodi[i].cena * 1.0);
+    }
+
+    // 1. Flips	10.00 x 3.0 = 30.00
+    // 2. CocaCola	75.00 x 2.0 = 150.00
+    // 3. ChokoBanana	5.00 x 10.0 = 50.00
+    for (int i = 0; i < n; i++) {
+        // output
+        float rez = proizvodi[i].kolicina * static_cast<float>(proizvodi[i].cena);
+        cout << i+1 << ". "
+            << proizvodi[i].name << " "
+            << proizvodi[i].cena << " x "
+        << proizvodi[i].kolicina << " = "
+        << setprecision(2) << rez << endl;
+
+    }
+    cout<<total;
+}

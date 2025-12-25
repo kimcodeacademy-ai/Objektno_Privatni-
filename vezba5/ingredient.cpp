@@ -39,11 +39,66 @@
 //
 // Да не се менува main функцијата. Се признаваат и решенија без динамичка алокација на меморија.
 
-
-#include <iostream>
+#include<iostream>
 #include <cstring>
+
 using namespace std;
 
+class Ingredient {
+    int quantity;
+    int calories;
+    char* name;
+
+public:
+
+    //default
+    Ingredient() {
+        name = new char[1];
+        name[0] = ' ';
+        quantity = 0;
+        calories = 0;
+    }
+    //const with arguments
+    Ingredient(char *n, int q, int c) {
+        name = new char[strlen(n) + 1]; // "NULL" character at the end
+        strcpy(name, n);
+        quantity = q;
+        calories = c;
+    }
+
+    // copy constr
+    Ingredient(const Ingredient& other) {
+        name = new char[strlen(other.name) + 1]; // "NULL" character at the end
+        strcpy(name, other.name);
+        quantity = other.quantity;
+        calories = other.calories;
+    }
+
+    // Destructor
+    ~Ingredient() {
+        delete[] name;
+    }
+
+    Ingredient& operator=(Ingredient& other) {
+        if (this != &other) {
+            delete[] name;
+            name = new char[strlen(other.name) + 1];
+            strcpy(name, other.name);
+            quantity = other.quantity;
+            calories = other.calories;
+        }
+        return *this;
+    }
+
+    friend ostream& operator<<(ostream& out, Ingredient& i) {
+        out << i.name << ": " << i.quantity;
+        return out;
+    }
+
+    int getCalories() {
+        return quantity*calories;
+    }
+};
 
 int main() {
 
