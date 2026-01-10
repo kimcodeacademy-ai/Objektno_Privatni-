@@ -23,6 +23,12 @@ add_executable(agol_app vezba1/Agol.cpp
         vezba5/niza.cpp
         vezba5/matrica-lab.cpp
         vezba5/ingredient.cpp
+        vezba7/upcasting.cpp
+        vezba7/upcastingvsdowncasting.cpp
+        vezba7/polymorphismexample.cpp
+        vezba7/dynamiccastexample.cpp
+        vezba7/hotelroom.cpp
+        vezba7/actors.cpp
 )
 add_executable(krug_app vezba1/Krug.cpp)
 add_executable(film_app vezba2/Film.cpp)
