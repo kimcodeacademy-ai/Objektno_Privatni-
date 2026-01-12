@@ -29,6 +29,12 @@ add_executable(agol_app vezba1/Agol.cpp
         vezba7/dynamiccastexample.cpp
         vezba7/hotelroom.cpp
         vezba7/actors.cpp
+        vezba8/Courses.cpp
+        vezba8/Planet.cpp
+        vezba8/AbstractClassExample.cpp
+        vezba8/MultipleInheritanceExample.cpp
+        vezba8/MultipleInheritanceProblem.cpp
+        vezba8/kvalifikaciska1.cpp
 )
 add_executable(krug_app vezba1/Krug.cpp)
 add_executable(film_app vezba2/Film.cpp)
