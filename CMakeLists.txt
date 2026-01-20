@@ -35,6 +35,11 @@ add_executable(agol_app vezba1/Agol.cpp
         vezba8/MultipleInheritanceExample.cpp
         vezba8/MultipleInheritanceProblem.cpp
         vezba8/kvalifikaciska1.cpp
+        vezba9/datotekaprimer.cpp
+        vezba9/exceptionexample.cpp
+        vezba9/advancedexample.cpp
+        vezba9/book.cpp
+        vezba9/simpledatafilexample.cpp
 )
 add_executable(krug_app vezba1/Krug.cpp)
 add_executable(film_app vezba2/Film.cpp)
